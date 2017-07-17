@@ -1,0 +1,26 @@
+<div class="container">
+  <app-cockpit (serverCreated)="onServerAdded($event)" (blueprintCreated)="onBluePrintAdded($event)"></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Change first element</button>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first component</button>
+      <app-server-element *ngFor="let serverElement of serverElements" [name]="serverElement.name" (onEvent)="onEvent($event)">
+        <p>
+          <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+          <em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
+        </p>
+      </app-server-element>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <ul class="list-group">
+        <li class="list-group-item clearfix" *ngFor="let event of events">
+          <div class="pull-left"> {{ event.type }}</div>
+          <div class="pull-right">{{ event.date }}</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
