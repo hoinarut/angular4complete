@@ -1,0 +1,14 @@
+.alert{
+  border-radius: 5px;
+  background-color: rgba(236,233,233,0.6);
+  padding: 10px;
+}
+.alert-warning {
+  border:  1px solid orange;
+  color: orange;
+}
+
+.alert-danger {
+  border: 1px solid red;
+  color: red;
+}

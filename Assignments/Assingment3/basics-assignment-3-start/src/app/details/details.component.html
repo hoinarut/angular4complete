@@ -1,0 +1,7 @@
+<button class="btn {{ statusClass }}" (click)="toggleDisplay()">Display Details</button>
+<p *ngIf="isInfoDisplayed">Secret Password = tuna</p>
+<ul>
+  <li *ngFor="let display of displays" [ngStyle]="{'background-color': isExceededViewCount(display) ? 'blue' : 'white'}" [ngClass]="{'exceeded-views': isExceededViewCount(display)}">
+    {{ display.action }} on {{ display.date }}
+  </li>
+</ul>
